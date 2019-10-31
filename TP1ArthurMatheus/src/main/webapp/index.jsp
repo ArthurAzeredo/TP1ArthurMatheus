@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : 17/10/2019, 09:25:50
+    Created on : 17/10/2019, 09:43:47
     Author     : aluno
 --%>
 
@@ -29,7 +29,7 @@
   <h1> Formulário HTML js</h1> 
   <h2> Preencha o formulário abaixo</h2><br />
 
-<form oninput="x.value=parseInt(a.value)" action="Script_do_Formulario.php" method="post">
+<form oninput="x.value=parseInt(a.value)" action="Meu1oservlet" method="post">
 
 <!-- DADOS PESSOAIS-->
 <fieldset>
@@ -88,7 +88,7 @@
     <div>
       
 
-    <label for="interesse" >Interesse: (com multipla escolha</label>
+    <label for="interesse" >Interesse: (com multipla escolha)</label>
     <select name="interesse" multiple size="5"> 
         <option value="js" selected="js">JavaScript</option> 
         <option value="c">C</option> 
