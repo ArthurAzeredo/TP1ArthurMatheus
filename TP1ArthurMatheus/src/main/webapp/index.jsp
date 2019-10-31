@@ -1,10 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : 17/10/2019, 09:43:47
-    Author     : aluno
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
  <head>
@@ -26,8 +20,9 @@
  </head>
 
  <body>
-  <h1> Formulário HTML js</h1> 
-  <h2> Preencha o formulário abaixo</h2><br />
+     <%@include file="WEB-INF/jspf/menugrande.jspf" %>
+  <h2> Formulário HTML js</h2> 
+  <h3> Preencha o formulário abaixo</h3><br />
 
 <form oninput="x.value=parseInt(a.value)" action="Meu1oservlet" method="post">
 
@@ -227,3 +222,4 @@
  </body>
  
 </html>
+
