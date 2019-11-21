@@ -1,5 +1,8 @@
- <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
+ 
 <html>
  <head>
  <title> Como criar um formulário completo em HTML </title>
@@ -20,10 +23,10 @@
  </head>
 
  <body>
-     <%@include file="WEB-INF/jspf/menugrande.jspf" %>
-  <h2> Formulário HTML js</h2> 
-  <h3> Preencha o formulário abaixo</h3><br />
-
+     <%@include file="WEB-INF/jspf/menu.jspf.jsp" %>
+     <h1> Formulário HTML js</h1> 
+     <h2> Preencha o formulário abaixo</h2><br />
+     
 <form oninput="x.value=parseInt(a.value)" action="Meu1oservlet" method="post">
 
 <!-- DADOS PESSOAIS-->
@@ -32,12 +35,12 @@
   <div>
     <input type="hidden" name="oculto" value="emJs">
     <label for="nome">Nome: </label>
-    <input type="text" name="nome" placeholder="Fulano..." alt="Digite o seu nome">
+    <input type="text" name="nome" placeholder="Fulano..." title="Digite o seu nome">
     <label for="sobrenome">Sobrenome: </label>
     <input type="text" name="sobrenome">
   </div>
   <br><br>
- <div>
+ <%--div>
     <label>Nascimento: </label>
     <label for="data">Data de nascimento: </label> 
     <input type="date" name="data">
@@ -46,7 +49,7 @@
  <div><!-- <form oninput="x.value=parseInt(a.value)" -->
    Sua idade:
       <input type="range" id="a" value="0" min="10" 
-	max="130">
+    max="130">
       <output name="x" for="a">
       </output> Anos<br><br>
  </div>
@@ -83,9 +86,9 @@
     <div>
       
 
-    <label for="interesse" >Interesse: (com multipla escolha)</label>
+    <label for="interesse" >Interesse: (com multipla escolha</label>
     <select name="interesse" multiple size="5"> 
-        <option value="js" selected="js">JavaScript</option> 
+        <option value="js" selected=>JavaScript</option> 
         <option value="c">C</option> 
         <option value="pytho">Python</option> 
         <option value="java">Java</option> 
@@ -94,8 +97,8 @@
         <option value="go">Go</option> 
         </select>
     </div>
-  </fieldset>
-  <fieldset>
+  </fieldset--%>
+  <%--fieldset>
     <legend>Dados de documentos</legend>
     <div>
     <label for="rg">RG: </label>
@@ -162,7 +165,7 @@
     <label for="cep">CEP: </label>
     <input type="text" name="cep" size="5" maxlength="5"> - <input type="text" name="cep2" size="3" maxlength="3">
    </div>
-</fieldset>
+</fieldset--%>
 <br />
 
 <!-- DADOS DE LOGIN -->
@@ -222,4 +225,3 @@
  </body>
  
 </html>
-

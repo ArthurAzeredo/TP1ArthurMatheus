@@ -4,13 +4,17 @@
  * and open the template in the editor.
  */
 package br.edu.iff.TP1ArthurMatheus.servlets;
-      //br.edu.iff.tp1_chagas.Meu1oservlet
+
+import br.edu.iff.TP1ArthurMatheus.entidades.Usuario;
+import br.edu.iff.TP1ArthurMatheus.utilidades.HibernateUtil;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.math.BigDecimal;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 /**
  *
@@ -29,19 +33,27 @@ public class Meu1oservlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Meu1oservlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Meu1oservlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        String nome = request.getParameter("nome");
+        String sobrenome = request.getParameter("sobrenome");
+        String nomeCompleto = nome+" "+sobrenome;
+        System.out.println("Nome completo: "+nomeCompleto);
+        String senha = request.getParameter("senha");
+        
+        Usuario user = new Usuario ();
+        user.setNome(nomeCompleto);
+        user.setSenha(senha);
+        
+        Double aleatorio = Math.random();
+        BigDecimal id = new BigDecimal(aleatorio);
+    user.setIdUsuario(id);
+    
+    Session sessaoBD = HibernateUtil.getSession();
+    Transaction tr = sessaoBD.beginTransaction();
+    sessaoBD.save(user);
+    tr.commit();
+    sessaoBD.close();
+    response.sendRedirect("tri.jsp");
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

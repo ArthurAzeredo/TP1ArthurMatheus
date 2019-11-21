@@ -4,8 +4,8 @@
     Author     : aluno
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<div style="brackground: black; color: white" >
+<%@page pageEncoding="UTF-8"%>
+<div style="brackground: black; color: white">
      <h2>MEU FORMULARIO</h2>
      <h4>Aprendendo Java Web</h4>
 </div>
