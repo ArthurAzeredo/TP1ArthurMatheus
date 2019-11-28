@@ -39,10 +39,14 @@ public class Meu1oservlet extends HttpServlet {
         System.out.println("Nome completo: "+nomeCompleto);
         String senha = request.getParameter("senha");
         
+     
+        
         Usuario user = new Usuario ();
         user.setNome(nomeCompleto);
         user.setSenha(senha);
         
+        
+       
         Double aleatorio = Math.random();
         BigDecimal id = new BigDecimal(aleatorio);
     user.setIdUsuario(id);

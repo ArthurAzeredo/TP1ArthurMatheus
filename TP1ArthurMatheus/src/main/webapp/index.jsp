@@ -98,7 +98,7 @@
         </select>
     </div>
   </fieldset--%>
-  <%--fieldset>
+  
     <legend>Dados de documentos</legend>
     <div>
     <label for="rg">RG: </label>
@@ -108,7 +108,7 @@
     <label>CPF:</label>
     <input type="text" name="cpf" size="9" maxlength="9"> - <input type="text" name="cpf2" size="2" maxlength="2">
    </div>
-</fieldset>
+
 
 <br />
 <!-- ENDEREÇO -->

@@ -29,7 +29,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
     , @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario")
     , @NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome = :nome")
+    
     , @NamedQuery(name = "Usuario.findBySenha", query = "SELECT u FROM Usuario u WHERE u.senha = :senha")})
+    
+   
+
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -45,6 +49,12 @@ public class Usuario implements Serializable {
     @Size(max = 2147483647)
     @Column(name = "senha")
     private String senha;
+    @Size(max = 2147483647)
+    @Column(name = "rg")
+    private String rg; 
+    @Column(name = "cpf")
+    private String cpf;
+    
 
     public Usuario() {
     }
@@ -60,7 +70,7 @@ public class Usuario implements Serializable {
     public void setIdUsuario(BigDecimal idUsuario) {
         this.idUsuario = idUsuario;
     }
-
+    
     public String getNome() {
         return nome;
     }
@@ -76,7 +86,16 @@ public class Usuario implements Serializable {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
+    
+    public String getRg() {
+        return rg;
+       
+    }
+    
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+        
     @Override
     public int hashCode() {
         int hash = 0;
